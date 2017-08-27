@@ -20,7 +20,7 @@ wget https://raw.githubusercontent.com/nmilosev/anyfed/master/anyfed && bash any
 
 For Termux (Android):
 
-```apt update && apt install tar wget -y && export PATH=$PATH && wget https://raw.githubusercontent.com/nmilosev/anyfed/master/anyfed && bash anyfed```
+```apt update && apt install tar wget -y && export PATH=$PATH && wget https://raw.githubusercontent.com/peterwilli/anyfed/master/anyfed && bash anyfed```
 
 and follow on-screen instructions
 
