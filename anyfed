@@ -41,7 +41,7 @@ echo "Using $ARCH Docker image:"
 
 # set MIRROR for ARCH
 
-MIRROR="http://dl.fedoraproject.org/pub/fedora-secondary/releases/25/Docker/aarch64/images/Fedora-Docker-Base-25-1.3.aarch64.tar.xz"
+MIRROR="https://download.fedoraproject.org/pub/fedora/linux/releases/25/Docker/$ARCH/images/Fedora-Docker-Base-25-1.3.$ARCH.tar.xz"
 
 # create structure for rootfs
 
@@ -143,12 +143,7 @@ EOM
 else
     echo "Setting up script for proot..."
 
-    if [ "$ARCH" = "x86_64" ]; then
-        PROOT_MIRROR="https://github.com/proot-me/proot-static-build/releases/download/v5.1.1/proot_5.1.1_x86_64_rc2"
-        PROOTPATH="$ANYFEDPATH/proot"
-        wget "$PROOT_MIRROR" -O "$ANYFEDPATH/proot" 
-        chmod +x "$ANYFEDPATH/proot"
-    else
+   
         PROOT_MIRROR="https://github.com/proot-me/proot-static-build/raw/master/static/proot-arm"
 
         echo "If you are on Android (Termux), proot-arm static library probably won't work."
@@ -171,7 +166,6 @@ else
             PROOTPATH="proot"
             LINKOPTIONS=" --link2symlink "
         fi
-    fi
 
 cat > "$ANYFEDPATH/anyfed" <<- EOM
     #!$(which sh)
